@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Samosa",
+    "pic": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/vegetable-samosas-b9b74f9.jpg",
+    "ingredients": ["Dough", "Potato", "Garam Masala"],
+    "rating": 8
+  },
+  {
+    "name": "Tikka Masala",
+    "pic": "https://assets.bonappetit.com/photos/5b69f163d3d14670539a2174/4:3/w_3552,h_2664,c_limit/ba-tikka-masala-2.jpg",
+    "ingredients": ["Garam Masala", "Chicken", "Tomato", "Rice", "Milk"],
+    "rating": 10
+  },
+  {
+    "name": "Spinach Chaat",
+    "pic": "https://www.vegrecipesofindia.com/wp-content/uploads/2013/05/palak-chaat-recipe18.jpg",
+    "ingredients": ["Garam Masala", "Spinach", "Batter"],
+    "rating": 6
+  }
+]

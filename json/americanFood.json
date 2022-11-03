@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Sticky Pancakes",
+    "pic": "https://blogs.uoregon.edu/natewoodburyaad250/files/2012/10/PSD_Food_illustrations_3190_pancakes_with_butter-1wi1tz5.jpg",
+    "ingredients": ["pancake batter", "syrup", "butter"],
+    "rating": 9
+  },
+  {
+    "name": "Delicious Cheese Burger",
+    "pic": "https://s23209.pcdn.co/wp-content/uploads/2022/07/220602_DD_The-Best-Ever-Cheeseburger_267-1200x1200-cropped.jpg",
+    "ingredients": ["Bun", "Ground Chuck", "Cheese", "Lettuce", "Onion", "Tomato", "Ketchup", "Mustard", "Pickles"],
+    "rating": 4
+  },
+  {
+    "name": "Gooey Grilled Cheese",
+    "pic": "https://static01.nyt.com/images/2021/02/17/dining/17tootired-grilled-cheese/17tootired-grilled-cheese-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+    "ingredients": ["Bread", "Cheese", "Butter"],
+    "rating": 10
+  }
+]

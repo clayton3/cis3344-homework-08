@@ -1,0 +1,30 @@
+﻿.food {
+    background-color: lightblue;
+    background-size: cover;
+    font-family: Arial;
+    background-repeat: round; /* light grey - will show through the content area */
+
+    padding-bottom: 2rem; /* make sure fixed footer doesn't cover up any content */
+    font-size: 1.15rem;
+    line-height: 2rem;
+    padding-top: 1rem;
+}
+
+.food img{
+    width:40%;
+    border: 1rem solid floralwhite;
+    white-space: nowrap;
+}
+
+.food button{
+    background-color: lightsteelblue;
+    font-family: Arial;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.food input{
+    font-family: Arial;
+    padding: 1rem;
+    font-size: 1rem;
+}
