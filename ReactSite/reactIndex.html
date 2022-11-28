@@ -37,6 +37,8 @@
         <script type="text/babel" src="js/React/AjaxUserTable.js"></script>
         <script type="text/babel" src="js/React/UserFilterTable.js"></script>
         <script type="text/babel" src="js/React/UserTable.js"></script>
+        <script type="text/babel" src="js/React/AjaxFoodTable.js"></script>
+        <script type="text/babel" src="js/React/FoodTable.js"></script>
 
         <script type="text/babel" src="js/React/Blog.js"></script>
         <script type="text/babel" src="js/React/Home.js"></script>
@@ -72,6 +74,7 @@
                                     <div className="dropContent hide">
                                         <Link to="/users">Users</Link> <br/>
                                         <Link to="/cars">Cars</Link><br/>
+                                        <Link to="/food">Food</Link>
                                     </div>
                                 </div>
 
@@ -86,11 +89,12 @@
                         <Route path="/" exact component={Home} />
                         <Route path="/users" component={AjaxUserTable} />
                         <Route path="/cars" component={AjaxCarTable} />
+                        <Route path="/food" component={AjaxFoodTable} />
                         <Route path="/blog" component={Blog} />
                     </div>
 
                     <div id="footer">
-                        [ your name goes here ]
+                        Clayton Blevins
                     </div>
 
                 </ReactRouterDOM.HashRouter>

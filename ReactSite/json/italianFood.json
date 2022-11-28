@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Chicago Style Pizza",
+    "pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP68GaMxj6iSn18pYEVZyW0lLLYgbEzbdmFQ&usqp=CAU",
+    "ingredients": ["Dough", "Pizza Sauce", "Cheese"],
+    "prepTime": 60,
+    "cookTime": 30,
+    "author": "",
+    "views": 1000,
+    "rating": 7,
+    "webUserId": 5
+  },
+  {
+    "id": 2,
+    "name": "Lasagna",
+    "pic": "https://d2c6ijbp7nf9a4.cloudfront.net/food_types/photo2s/28/landing_landing_italian3.jpg",
+    "ingredients": ["Lasagna Pasta", "Marinara", "Ricotta Cheese", "Ground Beef"],
+    "prepTime": 34,
+    "cookTime": 20,
+    "author": "Ben A.",
+    "views": 100,
+    "rating": 5,
+    "webUserId": 2
+  },
+  {
+    "id": 3,
+    "name": "Caprese Salad",
+    "pic": "https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Caprese-Salad_EXPS_FT20_50347_F_0610_1_home.jpg",
+    "ingredients": ["Heirloom Tomato", "Mozzarella Cheese", "Vinaigrette"],
+    "prepTime": 30,
+    "cookTime": 20,
+    "author": "Sally K.",
+    "views": 10000,
+    "rating": 10,
+    "webUserId": 1
+  }
+]
