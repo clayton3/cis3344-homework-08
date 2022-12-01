@@ -1,6 +1,6 @@
 "use strict"; 
 
-function MakeInsertEditList(objList, inputSpecs, displayTemplate) {
+function MakeInsertEditList(title, objList, inputSpecs, displayTemplate) {
 
     // Declarations that need to be at the MakeUserList level.
 
@@ -57,22 +57,48 @@ function MakeInsertEditList(objList, inputSpecs, displayTemplate) {
             cssClass: "ele"
         });
 
+        var canOpen = true;
+
         function refreshChildEle() {
             eleDiv.innerHTML = applyTemplate(displayTemplate,obj);
         }
         refreshChildEle();
 
         eleDiv.onclick = function () {
-            if (!isEditing) {
-                editArea = MakeEditArea({
-                    inputSpecs: inputSpecs,
-                    successCallBack: editSuccess,
-                    cancelCallBack: cancel,
-                    editObj: obj // this is the object from which the child div is being made
-                });
-                editContainer.appendChild(editArea);
-                isEditing = true;
+            if(canOpen) {
+                if (!isEditing) {
+                    editArea = MakeEditArea({
+                        title: title,
+                        inputSpecs: inputSpecs,
+                        successCallBack: editSuccess,
+                        cancelCallBack: cancel,
+                        editObj: obj // this is the object from which the child div is being made
+                    });
+                    editContainer.appendChild(editArea);
+                    isEditing = true;
+                }
             }
+        };
+
+        var deleteIcon = MakeTag({
+            htmlTag: "div",
+            cssClass: "x",
+            innerHTML: "&times;", // this is a multiplication X that looks better than plain x
+            parent: eleDiv
+        });
+
+        deleteIcon.onclick = function () {
+            var indx = objList.indexOf(obj);
+            //alert("You are trying to delete object with index value " + indx);
+
+            // delete 1 element from objList starting with index indx.
+            objList.splice(indx, 1);
+
+            canOpen = false;
+
+            // remove the div that represents the object that was just deleted from objList.
+            var eleToDelete = deleteIcon.parentElement;
+            eleToDelete.remove();
         };
 
         function editSuccess(inpObj) {

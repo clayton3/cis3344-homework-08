@@ -1,0 +1,20 @@
+.radio {
+    font-weight: bold;
+    padding:0.5rem;
+    border:thin solid black;
+    margin:0.5rem;
+    display: flex;
+    flex-direction: row;
+}
+.radio p {
+    margin:0rem;
+    margin-left: 0.5rem;
+    font-weight:normal;
+}
+
+
+/* desktop only */
+@media only screen and (min-width: 40rem) { 
+
+
+}

@@ -58,7 +58,7 @@ function MakeEditArea(params) {
     }
     var cancelCallBack = params.cancelCallBack;
 
-
+    var title = params.title || "Untitled";
     // Now that input params have been checked (with any issues throwing an
     // exception and halting execution), begin making the editArea div.
     var editDiv = MakeTag({
@@ -68,6 +68,11 @@ function MakeEditArea(params) {
 
     // create one row per input field. This row shall contain prompt, 
     // input box, and possible error msg.
+    MakeTag({
+       htmlTag: "h1",
+       parent: editDiv,
+        innerHTML: title
+    });
     for (var spec of inputSpecs) {
         // Above line of code (for...of) is like saying this: 
         // for (var i=0; i<inputSpecs.length; i++) {
@@ -96,12 +101,20 @@ function MakeEditArea(params) {
             parent: rowDiv
         });
 
-        // Add input tag for field. We need to access later, so save it right into the inputSpecs 
-        // object that it relates to.
-        spec.inputTag = MakeTag({
-            htmlTag: "input",
-            parent: rowDiv
-        });
+        if(spec.fieldName !== 'rating') {
+            // Add input tag for field. We need to access later, so save it right into the inputSpecs
+            // object that it relates to.
+            spec.inputTag = MakeTag({
+                htmlTag: "input",
+                parent: rowDiv
+            });
+        }else{
+            spec.inputTag = document.createElement("input");
+            spec.inputTag.type = "range";
+            spec.inputTag.min = "0";
+            spec.inputTag.max = "5";
+            rowDiv.appendChild(spec.inputTag);
+        }
 
         // Pre-populate the input tags of the edit area with editObj values (if editObj was supplied). 
         if (params.editObj) {
@@ -123,6 +136,17 @@ function MakeEditArea(params) {
         htmlTag: "br",
         parent: editDiv
     });
+
+    MakeTag({
+        htmlTag: "br",
+        parent: editDiv
+    });
+
+    editDiv.appendChild(MakeRadio({
+        prompt: "Servings",
+        list: [1, 2, 3, 4],
+        selected: false
+    }));
 
     var submitButton = MakeTag({
         htmlTag: "button",
@@ -156,7 +180,32 @@ function MakeEditArea(params) {
             } else {
                 spec.errorMsg.innerHTML = "&nbsp;"; // wipe any previous error message that might be there.
             }
+
+            if (spec.inputTag.value.length > spec.maxLen) {
+                spec.errorMsg.innerHTML = "Error: input must have at most " + spec.maxLen + " character(s).";
+                allGood = false;
+            } else {
+                spec.errorMsg.innerHTML = "&nbsp;"; // wipe any previous error message that might be there.
+            }
+
+            //Checking Datatype
+
+            if(spec.dataType === "integer"){
+                if(isNaN(spec.inputTag.value)){
+                    spec.errorMsg.innerHTML = "Error: this is not even a number!";
+                    allGood = false;
+                }else{
+                    var diff = Number(spec.inputTag.value) - Math.floor(Number(spec.inputTag.value));
+                    if (!(diff < 0.0001) && (diff > -0.0001)) {
+                        spec.errorMsg.innerHTML = "Error: This is not a valid integer!";
+                        allGood = false;
+                    }else{
+                        spec.errorMsg.innerHTML = "&nbsp;";
+                    }
+                }
+            }
         }
+
         if (!allGood) {
             editDiv.recordLevelMsg.innerHTML = "Please Try Again";
             return;

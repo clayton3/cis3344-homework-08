@@ -7,18 +7,8 @@
 // innerHTML (opt'l), set this into the new DOM element
 // cssClass (opt'l), add this css class to the new DOM element
 // src (opt'l for img tags), set src attribut to this image file name.
+// type (opt'l for input tags), set type
 // parent (opt'l) add this new DOM element to parent (also a DOM element)
-
-/* Full usage example: 
- * 
- * var ele = MakeTag ({
- *      htmlTag: "div", 
- *      innerHTML: "hello", 
- *      cssClass: "divClass",
- *      src: picFileName, 
- *      parent: parentDiv
- *      });
- */
 function MakeTag(params) {
     if (!params.htmlTag) {
         var errorMsg = "Function MakeTag requires a parameter object with an 'htmlTag' property.";
@@ -33,6 +23,15 @@ function MakeTag(params) {
     }
     if (params.src) {
         ele.src = params.src;
+    }
+    if (params.type) {
+        ele.type = params.type;
+    }
+    if (params.name) {
+        ele.name = params.name;
+    }
+    if (params.value) {
+        ele.value = params.value;
     }
     if (params.cssClass) {
         ele.classList.add(params.cssClass);
