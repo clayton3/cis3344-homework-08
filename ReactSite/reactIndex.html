@@ -39,6 +39,8 @@
         <script type="text/babel" src="js/React/UserTable.js"></script>
         <script type="text/babel" src="js/React/AjaxFoodTable.js"></script>
         <script type="text/babel" src="js/React/FoodTable.js"></script>
+        <script type="text/babel" src="js/React/AjaxFoodFilterTable.js"></script>
+        <script type="text/babel" src="js/React/FoodFilterTable.js"></script>
 
         <script type="text/babel" src="js/React/Blog.js"></script>
         <script type="text/babel" src="js/React/Home.js"></script>
@@ -74,7 +76,8 @@
                                     <div className="dropContent hide">
                                         <Link to="/users">Users</Link> <br/>
                                         <Link to="/cars">Cars</Link><br/>
-                                        <Link to="/food">Food</Link>
+                                        <Link to="/food">Food</Link><br />
+                                        <Link to={"/foodFilter"}>Search Food</Link>
                                     </div>
                                 </div>
 
@@ -90,6 +93,7 @@
                         <Route path="/users" component={AjaxUserTable} />
                         <Route path="/cars" component={AjaxCarTable} />
                         <Route path="/food" component={AjaxFoodTable} />
+                        <Route path={"/foodFilter"} component={AjaxFoodFilterTable}/>
                         <Route path="/blog" component={Blog} />
                     </div>
 

@@ -30,7 +30,7 @@ a {
     display:flex; 
     flex-direction: column; 
 
-    padding: 1rem;
+    padding: .25rem;
     background-color: floralwhite;
 
     /* give a little "3D"  effect to the edges of titleNav and footer */
@@ -40,6 +40,7 @@ a {
 #title {
     font-size: 3rem;
     font-weight: bold;
+    padding-left: 1rem;
     letter-spacing: .75rem; /* spaces out letters a bit */
     white-space: nowrap;  /* don't allow the title to wrap */
 }

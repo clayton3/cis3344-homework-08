@@ -18,7 +18,7 @@ function filterObjList(refList, searchKey) {
 
         for (var prop in obj) {
 
-            var propValUpper = obj[prop].toUpperCase(); // convert to upper case to match searchKey.
+            var propValUpper = obj[prop].toString().toUpperCase(); // convert to upper case to match searchKey.
 
             // Do not try to find a match for Table cells that hold images. 
             if (!propValUpper.includes(".JPG") && !propValUpper.includes(".PNG")) {

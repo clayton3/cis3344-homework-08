@@ -26,6 +26,7 @@ const FoodTable = ({list}) => {
                     <th className="textAlignCenter">Author</th>
                     <th className="textAlignCenter">Views</th>
                     <th className="textAlignCenter">Rating</th>
+                    <th className={"textAlignCenter"}>User ID</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -40,6 +41,7 @@ const FoodTable = ({list}) => {
                             <td>{listObj.author}</td>
                             <td className="wideImage textAlignRight">{listObj.views}</td>
                             <td className="wideImage textAlignRight">{listObj.rating}</td>
+                            <td className={"wideImage textAlignRight"}>{listObj.webUserId}</td>
                         </tr>
                     )
                 }
